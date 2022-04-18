@@ -1,11 +1,13 @@
 import React from "react";
 import DentistImg from "../images/dentist-high.png";
 import { FaPhoneAlt, FaCalendarAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import Button from "./Button";
 
 const Hero = () => {
   return (
@@ -20,12 +22,15 @@ const Hero = () => {
           atque, facere ea voluptatem vitae ex quaerat?
         </p>
         <div className=" my-5">
-          <button className="bg-cyan-400 hover:bg-cyan-500 px-4 py-3 rounded-full text-white font-semibold transition inline-flex items-center ">
+          <button className="px-4 py-3 rounded-full bg-cyan-400 text-white font-semibold transition inline-flex items-center hover:bg-cyan-500">
             <FaCalendarAlt className="mr-2" /> Appointment
           </button>
-          <button className="ml-5 px-4 py-3 rounded-full text-cyan-400 font-semibold transition inline-flex items-center hover:bg-cyan-400/20">
+          <a
+            href="tel:0171111111"
+            className="ml-5 px-4 py-3 rounded-full text-cyan-400 font-semibold transition inline-flex items-center hover:bg-cyan-400/20"
+          >
             <FaPhoneAlt className="mr-2" /> Call Us
-          </button>
+          </a>
         </div>
       </div>
       <div className="w-1/2 flex justify-end">
