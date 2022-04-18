@@ -1,48 +1,13 @@
-import React from "react";
-import RootCanalIcon from "../images/icons/teeth-root-canal.svg";
-import TeethAlignIcon from "../images/icons/teeth-align.svg";
-import CavityIcon from "../images/icons/cavity.svg";
+import React, { useEffect, useState } from "react";
 import Service from "./Service";
 
 const Services = () => {
-  const services = [
-    {
-      id: 1,
-      name: "Root Canal Specialist",
-      detail: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-      icon: RootCanalIcon,
-    },
-    {
-      id: 2,
-      name: "Alignment Specialist",
-      detail: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-      icon: TeethAlignIcon,
-    },
-    {
-      id: 3,
-      name: "Cosmetic Dentistry",
-      detail: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-      icon: CavityIcon,
-    },
-    {
-      id: 4,
-      name: "Cavity Inspection",
-      detail: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-      icon: CavityIcon,
-    },
-    {
-      id: 5,
-      name: "Live Dental Advisory",
-      detail: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-      icon: RootCanalIcon,
-    },
-    {
-      id: 6,
-      name: "Oral Hygiene Experts",
-      detail: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-      icon: RootCanalIcon,
-    },
-  ];
+  const [services, setServices] = useState([]);
+  useEffect(() => {
+    fetch("services.json")
+      .then((res) => res.json())
+      .then((data) => setServices(data));
+  }, []);
 
   return (
     <section className="container mx-auto px-10 py-10 bg-neutral-100">
@@ -57,6 +22,7 @@ const Services = () => {
         {services.map((service) => (
           <Service
             key={service.id}
+            id={service.id}
             icon={service.icon}
             name={service.name}
             detail={service.detail}

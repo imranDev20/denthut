@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Root Canal Specialist",
+    "detail": "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    "icon": " /images/icons/teeth-root-canal.svg"
+  },
+  {
+    "id": 2,
+    "name": "Alignment Specialist",
+    "detail": "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    "icon": "/images/icons/teeth-align.svg"
+  },
+  {
+    "id": 3,
+    "name": "Cosmetic Dentistry",
+    "detail": "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    "icon": "/images/icons/cavity.svg"
+  },
+  {
+    "id": 4,
+    "name": "Cavity Inspection",
+    "detail": "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    "icon": "/images/icons/cavity.svg"
+  },
+  {
+    "id": 5,
+    "name": "Live Dental Advisory",
+    "detail": "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    "icon": "/images/icons/cavity.svg"
+  },
+  {
+    "id": 6,
+    "name": "Oral Hygiene Experts",
+    "detail": "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    "icon": "/images/icons/cavity.svg"
+  }
+]

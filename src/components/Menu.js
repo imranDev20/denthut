@@ -6,7 +6,7 @@ const Menu = () => {
     { id: 1, link: "/", name: "Home" },
     { id: 2, link: "/about", name: "About" },
     { id: 3, link: "/checkout", name: "Checkout" },
-    { id: 4, link: "/contact", name: "Contact" },
+    { id: 4, link: "/blog", name: "Blog" },
   ];
 
   return (

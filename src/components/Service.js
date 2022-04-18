@@ -10,7 +10,7 @@ const Service = ({ name, icon, detail }) => {
         <p className="text-neutral-400">{detail}</p>
         <Link
           className=" text-cyan-400 hover:text-cyan-500 transition font-medium my-3 rounded inline-block"
-          to="/"
+          to="/checkout"
         >
           Book now
         </Link>
