@@ -1,6 +1,7 @@
 import React from "react";
 import Menu from "./Menu";
 import Logo from "./Logo";
+import AvatarIcon from "../images/avatar-default.png";
 import { FaSignInAlt, FaUserPlus, FaSignOutAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import app from "../firebase";
@@ -36,8 +37,16 @@ const Header = () => {
             </Link>
           </div>
         ) : (
-          <div className="ml-10">
-            <img src="" alt="" />
+          <div className="ml-10 flex items-center">
+            <div className="w-10 h-10 mr-2 rounded-full overflow-hidden">
+              <img
+                src={user.photoURL ? user.photoURL : AvatarIcon}
+                alt="Avatar Icon"
+              />
+            </div>
+            <p className="text-neutral-600 font-semibold mr-3">
+              {user.displayName ? user.displayName : "New User"}
+            </p>
             <button
               onClick={() => signOut(auth)}
               className="px-4 py-2 rounded-full bg-cyan-400 text-white font-semibold transition inline-flex items-center hover:bg-cyan-500"
