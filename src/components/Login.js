@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import app from "../firebase";
 import { getAuth } from "firebase/auth";
+import GoogleSignInButton from "./GoogleSignInButton";
 
 const auth = getAuth(app);
 
@@ -45,10 +46,11 @@ const Login = () => {
 
         <button
           onClick={handleSignIn}
-          className="bg-cyan-400 text-white font-medium hover:bg-cyan-500 transition cursor-pointer px-5 rounded-full py-2  my-5"
+          className="bg-cyan-400 text-white font-medium hover:bg-cyan-500 transition cursor-pointer px-5 rounded-full py-2  my-2"
         >
           Submit
         </button>
+        <GoogleSignInButton>Login With Google</GoogleSignInButton>
       </div>
     </div>
   );
