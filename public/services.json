@@ -2,42 +2,42 @@
   {
     "id": 1,
     "name": "Root Canal Specialist",
-    "detail": "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    "detail": "A root canal is a dental procedure involving the removal of the soft..",
     "icon": " /images/icons/teeth-root-canal.svg",
     "price": "600$"
   },
   {
     "id": 2,
     "name": "Alignment Specialist",
-    "detail": "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    "detail": "Teeth alignment is typically corrected through two methods: braces.",
     "icon": "/images/icons/teeth-align.svg",
     "price": "700$"
   },
   {
     "id": 3,
     "name": "Cosmetic Dentistry",
-    "detail": "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    "detail": "Cosmetic dentistry is a method of professional oral care that focuses ..",
     "icon": "/images/icons/cavity.svg",
     "price": "500$"
   },
   {
     "id": 4,
     "name": "Cavity Inspection",
-    "detail": "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    "detail": "Cosmetic dentistry is a method of professional oral care that focuses on ..",
     "icon": "/images/icons/cavity.svg",
     "price": "650$"
   },
   {
     "id": 5,
     "name": "Live Dental Advisory",
-    "detail": "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    "detail": "Our primary purpose is to protect patient safety and maintain public confidence..",
     "icon": "/images/icons/cavity.svg",
     "price": "700$"
   },
   {
     "id": 6,
     "name": "Oral Hygiene Experts",
-    "detail": "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    "detail": "Most oral health conditions are largely preventable and can be treated..",
     "icon": "/images/icons/cavity.svg",
     "price": "1200$"
   }

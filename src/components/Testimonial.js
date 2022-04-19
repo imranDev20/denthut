@@ -19,8 +19,8 @@ const Testimonial = () => {
         Testimonials
       </h2>
       <p className="text-center w-1/2 mx-auto text-neutral-600">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ex
-        repellendus excepturi quasi veniam harum, autem eum libero modi soluta.
+        See what our patients are saying to us. You can also be a part of our
+        amazing patients community.
       </p>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
