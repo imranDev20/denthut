@@ -21,8 +21,10 @@ const Footer = () => {
         <div className="p-5">
           <Logo />
           <p className="text-neutral-500 my-5">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut
-            quibusdam id voluptas? Eius in illum cumque aperiam nam facere vero.
+            A dentist, also known as a dental surgeon, is a health care
+            professional who specializes in dentistry which means the diagnosis,
+            prevention, and treatment of diseases and conditions of the oral
+            cavity.
           </p>
 
           {/* Social Icons */}
