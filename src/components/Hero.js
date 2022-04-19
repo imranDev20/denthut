@@ -1,5 +1,5 @@
 import React from "react";
-import DentistImg from "../images/dentist-high.png";
+import DentistImg from "../images/webp-hero.webp";
 import { FaPhoneAlt, FaCalendarAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
