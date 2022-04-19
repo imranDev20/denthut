@@ -4,7 +4,8 @@
 
 ## Works done:
 
-- Shown another product instead of an iPhone
-- Created customer reviews fake data and used hooks to show the same thing twice.
-- Added Blogs
-- Installed Recharts and shown charts in chart route.
+- Created Dentist website
+- Created Protedted route
+- Added Blogs Questions
+- Installed toast and shown toast
+- Used tailwind and react-firebase-hooks
