@@ -5,12 +5,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 import { BrowserRouter as Router } from "react-router-dom";
+import ScrollToTop from "./hooks/scrollToTop";
+import { ToastContainer } from "react-toastify";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Router>
     <React.StrictMode>
+      <ScrollToTop />
       <App />
+      <ToastContainer position="bottom-right" />
     </React.StrictMode>
   </Router>
 );

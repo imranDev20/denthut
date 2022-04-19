@@ -6,45 +6,48 @@ import {
 import app from "../firebase";
 import { getAuth } from "firebase/auth";
 import GoogleSignInButton from "./GoogleSignInButton";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link, Navigate } from "react-router-dom";
+import useEmailValidate from "../hooks/useEmailValidate";
+import { ScaleLoader } from "react-spinners";
+import useLoadingAnimation from "../hooks/useLoadingAnimation";
 
 const auth = getAuth(app);
 
 const Signup = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
-  const [isValid, setIsValid] = useState(false);
-
-  const location = useLocation();
-  const navigate = useNavigate();
-  const from = location?.state?.from?.pathname;
-
+  // Hooks
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const navigate = useNavigate();
 
-  // Email Regex
-  const emailRegex = /\S+@\S+\.\S+/;
+  // Custom Hooks
+  const { handleEmailChange, email, isValidEmail, emailMessage } =
+    useEmailValidate();
+  const scaleLoaderCss = useLoadingAnimation();
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-    if (emailRegex.test(email)) {
-      setIsValid(true);
-      setMessage("Your email looks good!");
+  // States
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [passwordMessage, setPasswordMessage] = useState("");
+  const [isValidPassword, setIsValidPassword] = useState(false);
+
+  // Functions
+
+  const handleCreateUser = () => {
+    createUserWithEmailAndPassword(email, password);
+  };
+
+  const handleConfirmPassword = (e) => {
+    if (password === e.target.value) {
+      setIsValidPassword(true);
+      setConfirmPassword(e.target.value);
+      setPasswordMessage("Passwords match");
     } else {
-      setIsValid(false);
-      setMessage("Please enter a valid email!");
+      setIsValidPassword(false);
+      setPasswordMessage("Passwords don't match");
     }
   };
 
-  const handleCreateUser = () => {
-    isValid &&
-      createUserWithEmailAndPassword(email, password).then(() => {
-        navigate(from, { replace: true });
-      });
-  };
-
-  console.log(error);
+  user && navigate("/");
 
   return (
     <div className="container mx-auto px-10 my-10  ">
@@ -54,27 +57,67 @@ const Signup = () => {
         <input
           className="bg-neutral-100 px-5 outline-none focus:ring-2 focus:ring-cyan-400 rounded-full py-2 my-3"
           type="email"
-          value={email}
+          required
           onChange={(e) => handleEmailChange(e)}
           placeholder="Email"
         />
-        <p className="text-red-500 text-sm ml-5">{message}</p>
+        <p
+          className={`${
+            isValidEmail ? `text-green-500` : `text-red-500`
+          } text-sm ml-5 `}
+        >
+          {emailMessage}
+        </p>
 
         <input
           className="bg-neutral-100 px-5 outline-none focus:ring-2 focus:ring-cyan-400 rounded-full py-2  my-3"
           type="password"
-          value={password}
+          required
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
+        <input
+          className="bg-neutral-100 px-5 outline-none focus:ring-2 focus:ring-cyan-400 rounded-full py-2  my-3"
+          type="password"
+          required
+          onChange={(e) => handleConfirmPassword(e)}
+          placeholder="Confirm Password"
+        />
+        <p
+          className={`${
+            isValidPassword ? `text-green-500` : `text-red-500`
+          } text-sm ml-5 `}
+        >
+          {passwordMessage}
+        </p>
+
         <button
           onClick={handleCreateUser}
-          className="bg-cyan-400 text-white font-medium hover:bg-cyan-500 transition cursor-pointer px-5 rounded-full py-2  my-2"
+          className="bg-cyan-400 text-white font-medium hover:bg-cyan-500 transition cursor-pointer px-5 rounded-full py-2  my-2 flex items-center justify-center"
         >
-          Submit
+          Sign Up
+          {loading && (
+            <ScaleLoader
+              css={scaleLoaderCss}
+              size={5}
+              height={13}
+              width={3}
+              color={"#fff"}
+              speedMultiplier={1}
+            />
+          )}
         </button>
+        <p className="ml-5 text-sm text-red-500">
+          {error?.message ? error?.message : ""}
+        </p>
         {/*  */}
-        <GoogleSignInButton>Sign Up With Google</GoogleSignInButton>
+        <GoogleSignInButton isSignUp>Sign Up With Google</GoogleSignInButton>
+        <Link
+          className="text-center text-sm mt-3 text-neutral-500 hover:text-cyan-400 "
+          to="/login"
+        >
+          Already a member? Login instead.
+        </Link>
       </div>
     </div>
   );

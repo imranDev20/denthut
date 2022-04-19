@@ -3,36 +3,42 @@
     "id": 1,
     "name": "Root Canal Specialist",
     "detail": "Lorem ipsum dolor sit amet consectetur adipisicing.",
-    "icon": " /images/icons/teeth-root-canal.svg"
+    "icon": " /images/icons/teeth-root-canal.svg",
+    "price": "600$"
   },
   {
     "id": 2,
     "name": "Alignment Specialist",
     "detail": "Lorem ipsum dolor sit amet consectetur adipisicing.",
-    "icon": "/images/icons/teeth-align.svg"
+    "icon": "/images/icons/teeth-align.svg",
+    "price": "700$"
   },
   {
     "id": 3,
     "name": "Cosmetic Dentistry",
     "detail": "Lorem ipsum dolor sit amet consectetur adipisicing.",
-    "icon": "/images/icons/cavity.svg"
+    "icon": "/images/icons/cavity.svg",
+    "price": "500$"
   },
   {
     "id": 4,
     "name": "Cavity Inspection",
     "detail": "Lorem ipsum dolor sit amet consectetur adipisicing.",
-    "icon": "/images/icons/cavity.svg"
+    "icon": "/images/icons/cavity.svg",
+    "price": "650$"
   },
   {
     "id": 5,
     "name": "Live Dental Advisory",
     "detail": "Lorem ipsum dolor sit amet consectetur adipisicing.",
-    "icon": "/images/icons/cavity.svg"
+    "icon": "/images/icons/cavity.svg",
+    "price": "700$"
   },
   {
     "id": 6,
     "name": "Oral Hygiene Experts",
     "detail": "Lorem ipsum dolor sit amet consectetur adipisicing.",
-    "icon": "/images/icons/cavity.svg"
+    "icon": "/images/icons/cavity.svg",
+    "price": "1200$"
   }
 ]
